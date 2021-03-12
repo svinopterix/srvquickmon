@@ -13,7 +13,6 @@ HEALTH_OK = 0
 FREESPACE_THRESHOLD = 90
 FREERAM_THRESHOLD = 5
 
-
 class HealthReporter
 
     def initialize
@@ -28,6 +27,21 @@ class HealthReporter
         return outText
     end
 
+    def diskstatus
+        return 'No realization'
+    end
+
+    def freespacestats
+        return 'No realization'
+    end
+
+    def freememorystats
+        return 'No realization'
+    end
+
+end
+
+class WinHealthReporter < HealthReporter
 
     def diskstatus      # text disk status report
         outText = Array.new
@@ -115,7 +129,7 @@ class HealthReporter
 end
 
 
-# r = HealthReporter.new
+# r = WinHealthReporter.new
 
 # puts r.header
 # puts r.diskstatus
