@@ -19,6 +19,10 @@ class HealthReporter
         @health = HEALTH_OK        
     end
 
+    def health_ok?
+        @health == HEALTH_OK
+    end
+
     attr_accessor :health
 
     def header          # text report header
